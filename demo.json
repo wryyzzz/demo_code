@@ -1,0 +1,31 @@
+{
+  "deployStatus": "deploying",
+  "deviceId": ${deviceId},
+  "topologyRole": "user-define",
+  "vpnFamilies": [
+    {
+      "afType": "ipv4",
+      "frr": {
+        "ipFrrEnable": true,
+        "vpnFrrEnable": true
+      },
+      "labelApplyMode": "per-route",
+      "popGo": true,
+      "prefixLimit": {
+        "alertPercent": 1,
+        "maximumRoutes": 1
+      },
+      "rd": "1000:1",
+      "routeTargets": [
+        {
+          "evpn": true,
+          "rtType": "export-extcommunity",
+          "rtValue": "200:200"
+        }
+      ],
+      "routingProtocols": []
+    }
+  ],
+  "vpnNodeName": "new_vpn_node",
+  "vrfName": "new_vpn_node"
+}
